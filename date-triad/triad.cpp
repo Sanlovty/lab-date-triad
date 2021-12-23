@@ -1,15 +1,15 @@
 #include "triad.h"
 
 Triad::Triad() :
-	first_(int()),
-	second_(int()),
-	third_(int())
+	first_(size_t()),
+	second_(size_t()),
+	third_(size_t())
 {
 }
 
-Triad::Triad(const int& first,
-             const int& second,
-             const int& third) :
+Triad::Triad(const size_t& first,
+             const size_t& second,
+             const size_t& third) :
 	first_(first),
 	second_(second),
 	third_(third)
@@ -23,17 +23,17 @@ Triad::Triad(const triple_t& triple) :
 {
 }
 
-int Triad::getFirst() const
+size_t Triad::getFirst() const
 {
 	return first_;
 }
 
-int Triad::getSecond() const
+size_t Triad::getSecond() const
 {
 	return second_;
 }
 
-int Triad::getThird() const
+size_t Triad::getThird() const
 {
 	return third_;
 }
@@ -43,17 +43,17 @@ triple_t Triad::getTriple() const
 	return triple_t(first_, second_, third_);
 }
 
-void Triad::setFirst(const int& first)
+void Triad::setFirst(const size_t& first)
 {
 	first_ = first;
 }
 
-void Triad::setSecond(const int& second)
+void Triad::setSecond(const size_t& second)
 {
 	second_ = second;
 }
 
-void Triad::setThird(const int& third)
+void Triad::setThird(const size_t& third)
 {
 	third_ = third;
 }

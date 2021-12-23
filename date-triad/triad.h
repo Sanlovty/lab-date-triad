@@ -5,24 +5,24 @@
 class Triad
 {
 protected:
-	int first_;
-	int second_;
-	int third_;
+	size_t first_;
+	size_t second_;
+	size_t third_;
 
 public:
 	Triad();
-	Triad(const int& first, const int& second, const int& third);
+	Triad(const size_t& first, const size_t& second, const size_t& third);
 	Triad(const triple_t& triple);
 
 
-	int getFirst() const;
-	int getSecond() const;
-	int getThird() const;
+	size_t getFirst() const;
+	size_t getSecond() const;
+	size_t getThird() const;
 	triple_t getTriple() const;
 
-	void setFirst(const int& first);
-	void setSecond(const int& second);
-	void setThird(const int& third);
+	void setFirst(const size_t& first);
+	void setSecond(const size_t& second);
+	void setThird(const size_t& third);
 	void setTriple(const triple_t& triple);
 
 	void increaseFirst();

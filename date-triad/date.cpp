@@ -285,5 +285,9 @@ string Date::toString() const
 	string day = first_ < 10 ? '0' + to_string(first_) : to_string(first_);
 	string month = second_ < 10 ? '0' + to_string(second_) : to_string(second_);
 
-	return string(day + stringSeparator_ + month + stringSeparator_ + to_string(third_));
+	return "Date {\n"
+		" day: " + day +
+		" month: " + month +
+		" year: " + to_string(third_) +
+		+"}";
 }
