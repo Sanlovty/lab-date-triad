@@ -25,6 +25,11 @@ public:
 	void setThird(const int& third);
 	void setTriple(const triple_t& triple);
 
+	void increaseFirst();
+	void increaseSecond();
+	void increaseThird();
+	void increaseTuple();
+
 	string toString() const;
 };
 #endif
