@@ -234,7 +234,7 @@ bool Date::isLeapYearMethod_(const size_t& year)
 
 void Date::increaseDateByN(const size_t& n)
 {
-	*this = Date(dateAfterByDays(n));
+	*this = daysToDate_(toDays() + 1 + n);
 }
 
 size_t Date::toDays() const
@@ -242,31 +242,6 @@ size_t Date::toDays() const
 	return toDaysMethod_(*this);
 }
 
-bool Date::isLeapYear() const
-{
-	return isLeapYearMethod_(third_);
-}
-
-size_t Date::differenceBetween(Date date) const
-{
-	return static_cast<size_t>(abs(
-		static_cast<int64_t>(toDaysMethod_(*this)) - static_cast<int64_t>(toDaysMethod_(date))));
-}
-
-Date Date::dateBeforeByDays(const size_t& days) const
-{
-	const size_t dateDays = toDays() + 1;
-	if (days > dateDays)
-	{
-		throw exception("The date is less than days from parameter");
-	}
-	return daysToDate_(dateDays - days);
-}
-
-Date Date::dateAfterByDays(const size_t& days) const
-{
-	return daysToDate_(toDays() + 1 + days);
-}
 
 Date& Date::operator=(const Date& other)
 {

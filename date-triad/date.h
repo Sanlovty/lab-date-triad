@@ -44,10 +44,6 @@ public:
 	void increaseDateByN(const size_t& n);
 
 	size_t toDays() const;
-	bool isLeapYear() const;
-	size_t differenceBetween(Date date) const;
-	Date dateBeforeByDays(const size_t& days) const;
-	Date dateAfterByDays(const size_t& days) const;
 
 	Date& operator=(const Date& other);
 
