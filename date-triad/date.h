@@ -36,10 +36,10 @@ public:
 	void setDate(const size_t& day, const size_t& month, const size_t& year);
 
 
-	void increaseFirst();
-	void increaseSecond();
-	void increaseThird();
-	void increaseTuple();
+	void increaseFirst() override;
+	void increaseSecond() override;
+	void increaseThird() override;
+	void increaseTuple() override;
 
 	void increaseDateByN(const size_t& n);
 
@@ -47,7 +47,7 @@ public:
 
 	Date& operator=(const Date& other);
 
-	string toString() const;
+	string toString() const override;
 };
 
 #endif

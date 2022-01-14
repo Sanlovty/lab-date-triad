@@ -11,7 +11,7 @@ void Date::roundDays_()
 {
 	if (first_ > monthDays_[second_ - 1])
 	{
-		if (second_ == 2 && isLeapYear())
+		if (second_ == 2 && isLeapYearMethod_(getYear()))
 		{
 			first_ = monthDays_[second_ - 1] + 1;
 			return;
@@ -207,17 +207,20 @@ void Date::setDate(const size_t& day, const size_t& month, const size_t& year)
 
 void Date::increaseFirst()
 {
-	setFirst(first_ + 1);
+	Triad::increaseFirst();
+	roundDays_();
 }
 
 void Date::increaseSecond()
 {
-	setSecond(second_ + 1);
+	Triad::increaseSecond();
+	roundDays_();
 }
 
 void Date::increaseThird()
 {
-	setThird(third_ + 1);
+	Triad::increaseThird();
+	roundDays_();
 }
 
 void Date::increaseTuple()
@@ -261,8 +264,8 @@ string Date::toString() const
 	string month = second_ < 10 ? '0' + to_string(second_) : to_string(second_);
 
 	return "Date {\n"
-		" day: " + day +
-		" month: " + month +
-		" year: " + to_string(third_) +
-		+"}";
+		" day: " + day + "\n" +
+		" month: " + month + "\n" +
+		" year: " + to_string(third_) + "\n" +
+		+"}" + "\n";
 }
